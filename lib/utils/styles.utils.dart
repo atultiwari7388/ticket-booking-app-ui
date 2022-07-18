@@ -7,7 +7,7 @@ class Styles {
   static Color primaryColor = primaryColor;
   static Color textColor = const Color(0xff3b3b3b);
   static Color bgColor = const Color(0xffeeedf2);
-  static Color orangeColor = const Color(0xff526799);
+  static Color orangeColor = const Color(0xfff37b67);
 
   //textStyles
 
@@ -23,6 +23,18 @@ class Styles {
   static TextStyle headlineStyle3 = const TextStyle(
       fontSize: 17.0, color: Colors.white, fontWeight: FontWeight.w500);
 
-  static TextStyle headlineStyle4 = TextStyle(
-      fontSize: 14.0, color: Colors.grey.shade500, fontWeight: FontWeight.w500);
+  static TextStyle headlineStyle4 = const TextStyle(
+      fontSize: 14.0, color: Colors.white, fontWeight: FontWeight.w500);
+
+  static TextStyle headlineStyle5 = TextStyle(
+    fontSize: 17.0,
+    color: Colors.blueGrey.shade200,
+    fontWeight: FontWeight.w100,
+  );
+
+  static TextStyle headlineStyle6 = TextStyle(
+    fontSize: 14.0,
+    color: Colors.blueGrey.shade200,
+    fontWeight: FontWeight.w100,
+  );
 }

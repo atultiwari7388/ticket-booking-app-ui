@@ -31,7 +31,7 @@ class _HomeViewState extends State<HomeView> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Good Morning", style: Styles.headlineStyle3),
+                        Text("Good Morning", style: Styles.headlineStyle5),
                         const Gap(5),
                         Text("Book Tickets", style: Styles.headlineStyle),
                       ],
@@ -72,7 +72,7 @@ class _HomeViewState extends State<HomeView> {
                     Text("Upcoming Flights", style: Styles.headlineStyle2),
                     InkWell(
                       onTap: () {},
-                      child: Text("View all", style: Styles.headlineStyle4),
+                      child: Text("View all", style: Styles.headlineStyle6),
                     ),
                   ],
                 ),
