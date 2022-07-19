@@ -1,9 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticket_booking_app/utils/app_info.list.utils.dart';
 import 'package:ticket_booking_app/utils/styles.utils.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ticket_booking_app/view/tickets.view.dart';
+import 'package:ticket_booking_app/view/components/hotel.components.dart';
+import 'package:ticket_booking_app/view/components/tickets.components.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -81,7 +82,42 @@ class _HomeViewState extends State<HomeView> {
           ),
           const Gap(15),
           //ticket
-          const TicketsView(),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+              children: const [
+                TicketsView(),
+                TicketsView(),
+              ],
+            ),
+          ),
+          const Gap(15),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Hotels", style: Styles.headlineStyle2),
+                InkWell(
+                  onTap: () {},
+                  child: Text("View all", style: Styles.headlineStyle6),
+                ),
+              ],
+            ),
+          ),
+          const Gap(15),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+              children:
+                  hotelList.map((hotel) => HotelsView(hotel: hotel)).toList(),
+            ),
+          ),
+          const Gap(40),
         ],
       ),
     );

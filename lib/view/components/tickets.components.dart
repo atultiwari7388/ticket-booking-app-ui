@@ -12,11 +12,12 @@ class TicketsView extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = AppDimensions.getSize(context);
     return SizedBox(
-      width: size.width / 2,
+      width: size.width * 0.85,
       height: 200,
       child: Container(
         margin: const EdgeInsets.only(left: 16.0),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             /*
             showing the blue part of the card
