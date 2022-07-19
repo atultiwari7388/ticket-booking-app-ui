@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_booking_app/view/home.view.dart';
+import 'package:ticket_booking_app/view/search.view.dart';
 
 class BottomBarView extends StatefulWidget {
   const BottomBarView({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _BottomBarViewState extends State<BottomBarView> {
 
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeView(),
-    const Text("Search"),
+    const SearchView(),
     const Text("Ticket"),
     const Text("Profile"),
   ];

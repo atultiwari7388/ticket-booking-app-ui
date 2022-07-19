@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticket_booking_app/Widgets/view_all.widgets.dart';
 import 'package:ticket_booking_app/utils/app_info.list.utils.dart';
 import 'package:ticket_booking_app/utils/styles.utils.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -72,16 +73,8 @@ class _HomeViewState extends State<HomeView> {
                 ),
                 //upcoming flight section
                 const Gap(40),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Upcoming Flights", style: Styles.headlineStyle2),
-                    InkWell(
-                      onTap: () {},
-                      child: Text("View all", style: Styles.headlineStyle6),
-                    ),
-                  ],
-                ),
+                ViewAllWidget(
+                    text1: "Upcoming Flights", text2: "View all", onTap: () {}),
               ],
             ),
           ),
@@ -99,16 +92,8 @@ class _HomeViewState extends State<HomeView> {
           const Gap(15),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Hotels", style: Styles.headlineStyle2),
-                InkWell(
-                  onTap: () {},
-                  child: Text("View all", style: Styles.headlineStyle6),
-                ),
-              ],
-            ),
+            child:
+                ViewAllWidget(text1: "Hotels", text2: "View all", onTap: () {}),
           ),
           const Gap(15),
           SingleChildScrollView(
