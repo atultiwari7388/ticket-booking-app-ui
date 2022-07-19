@@ -6,10 +6,15 @@ import 'package:ticket_booking_app/utils/app_dimensions.utils.dart';
 import 'package:ticket_booking_app/utils/styles.utils.dart';
 
 class TicketsView extends StatelessWidget {
-  const TicketsView({Key? key}) : super(key: key);
+  final Map<String, dynamic> ticket;
+  const TicketsView({Key? key, required this.ticket}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    if (kDebugMode) {
+      print("${ticket["number"]}");
+    }
+
     final size = AppDimensions.getSize(context);
     return SizedBox(
       width: size.width * 0.85,
@@ -35,7 +40,8 @@ class TicketsView extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text("NYC", style: Styles.headlineStyle3),
+                      Text(ticket["from"]["code"],
+                          style: Styles.headlineStyle3),
                       const Spacer(),
                       const ThickContainer(),
                       Expanded(
@@ -83,7 +89,7 @@ class TicketsView extends StatelessWidget {
                       ),
                       const ThickContainer(),
                       const Spacer(),
-                      Text("LDN", style: Styles.headlineStyle3),
+                      Text(ticket["to"]["code"], style: Styles.headlineStyle3),
                     ],
                   ),
                   const Gap(1.0),
@@ -92,13 +98,14 @@ class TicketsView extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: 100,
-                        child: Text("New York", style: Styles.headlineStyle4),
+                        child: Text(ticket["from"]["name"],
+                            style: Styles.headlineStyle4),
                       ),
-                      Text("8H 30M", style: Styles.headlineStyle4),
+                      Text(ticket["flying_time"], style: Styles.headlineStyle4),
                       SizedBox(
                         width: 100,
                         child: Text(
-                          "London",
+                          ticket["to"]["name"],
                           textAlign: TextAlign.end,
                           style: Styles.headlineStyle4,
                         ),
@@ -195,7 +202,7 @@ class TicketsView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("10 AUG", style: Styles.headlineStyle3),
+                          Text(ticket["date"], style: Styles.headlineStyle3),
                           const Gap(5.0),
                           Text(
                             "Date",
@@ -206,7 +213,8 @@ class TicketsView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text("09:00 AM", style: Styles.headlineStyle3),
+                          Text(ticket["departure_time"],
+                              style: Styles.headlineStyle3),
                           const Gap(5.0),
                           Text(
                             "Departure time",
@@ -217,7 +225,8 @@ class TicketsView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text("23 ", style: Styles.headlineStyle3),
+                          Text(ticket["number"].toString(),
+                              style: Styles.headlineStyle3),
                           const Gap(5.0),
                           Text(
                             "Number",

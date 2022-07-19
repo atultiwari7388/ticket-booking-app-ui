@@ -87,11 +87,9 @@ class _HomeViewState extends State<HomeView> {
             physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: const [
-                TicketsView(),
-                TicketsView(),
-              ],
-            ),
+                children: ticketList
+                    .map((ticket) => TicketsView(ticket: ticket))
+                    .toList()),
           ),
           const Gap(15),
           Container(
