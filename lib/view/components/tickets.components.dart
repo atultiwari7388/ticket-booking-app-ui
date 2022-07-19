@@ -18,9 +18,9 @@ class TicketsView extends StatelessWidget {
     final size = AppDimensions.getSize(context);
     return SizedBox(
       width: size.width * 0.85,
-      height: 200,
+      height: AppDimensions.getHeight(200),
       child: Container(
-        margin: const EdgeInsets.only(left: 16.0),
+        margin: EdgeInsets.only(left: AppDimensions.getHeight(16.0)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -28,12 +28,12 @@ class TicketsView extends StatelessWidget {
             showing the blue part of the card
              */
             Container(
-              padding: const EdgeInsets.all(16.0),
-              decoration: const BoxDecoration(
-                color: Color(0xff526799),
+              padding: EdgeInsets.all(AppDimensions.getHeight(16.0)),
+              decoration: BoxDecoration(
+                color: const Color(0xff526799),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(21.0),
-                  topRight: Radius.circular(21.0),
+                  topLeft: Radius.circular(AppDimensions.getHeight(21.0)),
+                  topRight: Radius.circular(AppDimensions.getHeight(21.0)),
                 ),
               ),
               child: Column(
@@ -48,7 +48,7 @@ class TicketsView extends StatelessWidget {
                         child: Stack(
                           children: [
                             SizedBox(
-                              height: 24,
+                              height: AppDimensions.getHeight(24.0),
                               child: LayoutBuilder(
                                 builder: (BuildContext context,
                                     BoxConstraints constraints) {
@@ -64,10 +64,10 @@ class TicketsView extends StatelessWidget {
                                     children: List.generate(
                                       (constraints.constrainWidth() / 6)
                                           .floor(),
-                                      (index) => const SizedBox(
-                                        width: 3,
-                                        height: 1,
-                                        child: DecoratedBox(
+                                      (index) => SizedBox(
+                                        width: AppDimensions.getWidth(3.0),
+                                        height: AppDimensions.getHeight(1.0),
+                                        child: const DecoratedBox(
                                           decoration: BoxDecoration(
                                               color: Colors.white),
                                         ),
@@ -97,13 +97,13 @@ class TicketsView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
-                        width: 100,
+                        width: AppDimensions.getWidth(100.0),
                         child: Text(ticket["from"]["name"],
                             style: Styles.headlineStyle4),
                       ),
                       Text(ticket["flying_time"], style: Styles.headlineStyle4),
                       SizedBox(
-                        width: 100,
+                        width: AppDimensions.getWidth(100.0),
                         child: Text(
                           ticket["to"]["name"],
                           textAlign: TextAlign.end,
@@ -122,22 +122,24 @@ class TicketsView extends StatelessWidget {
               color: Styles.orangeColor,
               child: Row(
                 children: [
-                  const SizedBox(
-                    height: 20,
-                    width: 10,
+                  SizedBox(
+                    height: AppDimensions.getHeight(20.0),
+                    width: AppDimensions.getWidth(10.0),
                     child: DecoratedBox(
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(10),
-                          bottomRight: Radius.circular(10),
+                          topRight:
+                              Radius.circular(AppDimensions.getHeight(10.0)),
+                          bottomRight:
+                              Radius.circular(AppDimensions.getHeight(10.0)),
                         ),
                       ),
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(AppDimensions.getHeight(12.0)),
                       child: LayoutBuilder(
                         builder:
                             (BuildContext context, BoxConstraints constraints) {
@@ -165,15 +167,17 @@ class TicketsView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                    width: 10,
+                  SizedBox(
+                    height: AppDimensions.getHeight(20.0),
+                    width: AppDimensions.getWidth(10.0),
                     child: DecoratedBox(
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                          bottomLeft: Radius.circular(10),
+                          topLeft:
+                              Radius.circular(AppDimensions.getHeight(10.0)),
+                          bottomLeft:
+                              Radius.circular(AppDimensions.getHeight(10.0)),
                         ),
                       ),
                     ),
@@ -185,13 +189,17 @@ class TicketsView extends StatelessWidget {
             bottom part of the card
              */
             Container(
-              padding: const EdgeInsets.only(
-                  left: 16.0, top: 10, right: 16.0, bottom: 16.0),
+              padding: EdgeInsets.only(
+                left: AppDimensions.getHeight(16.0),
+                top: AppDimensions.getHeight(10.0),
+                right: AppDimensions.getHeight(16.0),
+                bottom: AppDimensions.getHeight(16.0),
+              ),
               decoration: BoxDecoration(
                 color: Styles.orangeColor,
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(21.0),
-                  bottomRight: Radius.circular(21.0),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(AppDimensions.getHeight(21.0)),
+                  bottomRight: Radius.circular(AppDimensions.getHeight(21.0)),
                 ),
               ),
               child: Column(

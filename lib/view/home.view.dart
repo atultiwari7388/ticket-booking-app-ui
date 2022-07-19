@@ -6,6 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ticket_booking_app/view/components/hotel.components.dart';
 import 'package:ticket_booking_app/view/components/tickets.components.dart';
 
+import '../utils/app_dimensions.utils.dart';
+
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
 
@@ -21,7 +23,8 @@ class _HomeViewState extends State<HomeView> {
       body: ListView(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding:
+                EdgeInsets.symmetric(horizontal: AppDimensions.getWidth(20.0)),
             child: Column(
               children: [
                 //top section
@@ -39,10 +42,11 @@ class _HomeViewState extends State<HomeView> {
                     ),
                     //image Section
                     Container(
-                      height: 50,
-                      width: 50,
+                      height: AppDimensions.getHeight(50.0),
+                      width: AppDimensions.getWidth(50.0),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(
+                            AppDimensions.getHeight(10.0)),
                         color: Colors.white,
                       ),
                       child: const Icon(Icons.menu),
@@ -60,7 +64,8 @@ class _HomeViewState extends State<HomeView> {
                     enabledBorder: outlineInputBorder,
                     focusedBorder: outlineInputBorder,
                     prefixIcon: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: AppDimensions.getWidth(12.0)),
                       child: SvgPicture.asset("assets/icons/Search.svg"),
                     ),
                   ),
@@ -85,7 +90,7 @@ class _HomeViewState extends State<HomeView> {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: AppDimensions.getHeight(20.0)),
             child: Row(
                 children: ticketList
                     .map((ticket) => TicketsView(ticket: ticket))
@@ -109,7 +114,7 @@ class _HomeViewState extends State<HomeView> {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.only(left: 20),
+            padding: EdgeInsets.only(left: AppDimensions.getHeight(20.0)),
             child: Row(
               children:
                   hotelList.map((hotel) => HotelsView(hotel: hotel)).toList(),
