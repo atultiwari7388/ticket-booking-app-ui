@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticket_booking_app/Widgets/custom_airline_ticket_form.widgets.dart';
 import 'package:ticket_booking_app/Widgets/custom_btn.widgets.dart';
+import 'package:ticket_booking_app/Widgets/custom_ticket_tabs.widgets.dart';
 import 'package:ticket_booking_app/utils/app_dimensions.utils.dart';
 import 'package:ticket_booking_app/utils/styles.utils.dart';
 
@@ -32,55 +33,8 @@ class _SearchViewState extends State<SearchView> {
                 .copyWith(fontSize: AppDimensions.getHeight(35)),
           ),
           Gap(AppDimensions.getHeight(20)),
-          FittedBox(
-            child: Container(
-              padding: const EdgeInsets.all(3.5),
-              decoration: BoxDecoration(
-                color: const Color(0xfff4f6fd),
-                borderRadius: BorderRadius.circular(
-                  AppDimensions.getHeight(50),
-                ),
-              ),
-              child: Row(
-                children: [
-                  /*
-                airline tickets
-                 */
-                  Container(
-                    width: size.width * .44,
-                    padding: EdgeInsets.symmetric(
-                        vertical: AppDimensions.getHeight(7.0)),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.horizontal(
-                        left: Radius.circular(
-                          AppDimensions.getHeight(50),
-                        ),
-                      ),
-                    ),
-                    child: const Center(child: Text("Airline Tickets")),
-                  ),
-                  /*
-                hotels
-                 */
-                  Container(
-                    width: size.width * .44,
-                    padding: EdgeInsets.symmetric(
-                        vertical: AppDimensions.getHeight(7.0)),
-                    decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      borderRadius: BorderRadius.horizontal(
-                        right: Radius.circular(
-                          AppDimensions.getHeight(50),
-                        ),
-                      ),
-                    ),
-                    child: const Center(child: Text("Hotels")),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          const CustomTicketTabsWidget(
+              text1: "Airline Tickets", text2: "Hotels"),
           Gap(AppDimensions.getHeight(25)),
           const CustomAirlineTicketFormField(
             icon: Icons.flight_takeoff_rounded,
@@ -131,7 +85,7 @@ class _SearchViewState extends State<SearchView> {
                         borderRadius: BorderRadius.circular(
                           AppDimensions.getHeight(12.0),
                         ),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: NetworkImage(
                               "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fyoung-couple-at-airport-lounge-waiting-for-their-flight-picture-id686198182%3Fk%3D6%26m%3D686198182%26s%3D170667a%26w%3D0%26h%3Dm-2I1H-9OypZuSybStSxxgwYdbbcpJhlecg5ZagIdJc%3D&f=1&nofb=1"),
                           fit: BoxFit.cover,
@@ -159,7 +113,7 @@ class _SearchViewState extends State<SearchView> {
                           horizontal: AppDimensions.getWidth(15.0),
                         ),
                         decoration: BoxDecoration(
-                          color: Color(0xff3ab8b8),
+                          color: const Color(0xff3ab8b8),
                           borderRadius: BorderRadius.circular(
                               AppDimensions.getHeight(18.0)),
                         ),
@@ -191,7 +145,7 @@ class _SearchViewState extends State<SearchView> {
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             border: Border.all(
-                                width: 18.0, color: Color(0xff189999)),
+                                width: 18.0, color: const Color(0xff189999)),
                             color: Colors.transparent,
                           ),
                         ),
@@ -207,7 +161,7 @@ class _SearchViewState extends State<SearchView> {
                       horizontal: AppDimensions.getWidth(15.0),
                     ),
                     decoration: BoxDecoration(
-                      color: Color(0xffec6545),
+                      color: const Color(0xffec6545),
                       borderRadius:
                           BorderRadius.circular(AppDimensions.getHeight(18.0)),
                     ),
